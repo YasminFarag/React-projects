@@ -5,6 +5,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 import './styles/index.css';
 
+
 // ==========================
 // Components
 // ==========================
@@ -16,6 +17,7 @@ export const Square =(props)=>{
       </button>
     );
   }
+
 
 
 class Board extends React.Component {
@@ -43,7 +45,7 @@ class Board extends React.Component {
       </React.Fragment>
     );
   }
-}
+} 
 
 class Game extends React.Component {
   render() {
