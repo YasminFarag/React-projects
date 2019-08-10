@@ -7,7 +7,11 @@ export default class Board extends Component {
       super(props);
 
       this.state={
+
+        // create an Array with 9 boxes
         board: Array(9).fill(null),
+
+        // player
         player: 'X'
       }
     }
@@ -17,13 +21,15 @@ export default class Board extends Component {
 
       let board2 = this.state.board
       board2[index]= this.state.player
+
+      // switch players
       let newPlayer = this.state.player === 'X' ? 'O' :'X';
 
       this.setState({
         board:board2,
         player:newPlayer
       })
-        console.log(this.state.board);
+       /*  console.log(this.state.board); */
         
     }
 
