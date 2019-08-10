@@ -2,29 +2,27 @@ import React, { Component } from 'react';
 import {Square} from './index.js';
 
 export default class Board extends React.Component {
-    renderSquare(i) {
-      return <Square />;
+    constructor(props) {
+      super(props);
+
+      
     }
+
+   
+    handleClick= (event)=>{
+
+    }
+
   
     render() {
+     const box= this.state.board.map((box,index)=><div className="box" key={index} onClick={this.handleClick}>{box}</div>)
       const status = 'Next player: X';
   
       return (
-        <React.Fragment>
-          <div className="status h2 text-center">{status}</div>
-          <div className="board">
-              {this.renderSquare(0)}
-              {this.renderSquare(1)}
-              {this.renderSquare(2)}
-              {this.renderSquare(3)}
-              {this.renderSquare(4)}
-              {this.renderSquare(5)}
-              {this.renderSquare(6)}
-              {this.renderSquare(7)}
-              {this.renderSquare(8)}
-          </div>
-        </React.Fragment>
-      );
+
+
+        <div className="box">{box}</div>
+      )
+      }
     }
-  }
   
