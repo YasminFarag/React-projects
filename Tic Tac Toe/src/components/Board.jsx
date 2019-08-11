@@ -20,6 +20,7 @@ export default class Board extends Component {
     handleClick= (index)=>{
 
       let board2 = this.state.board
+      if(this.state.board[index] === null){
       board2[index]= this.state.player
 
       // switch players
@@ -29,6 +30,8 @@ export default class Board extends Component {
         board:board2,
         player:newPlayer
       })
+
+    }
        /*  console.log(this.state.board); */
         
     }
