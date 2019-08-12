@@ -34,7 +34,7 @@ export default class Board extends Component {
         console.log(this.state.board);
         
         if(this.state.board[a] && this.state.board[a] === this.state.board[b] && this.state.board[a] === this.state.board[c]){
-          prompt('you won');
+          alert('you won');
       
         }
 
@@ -61,9 +61,11 @@ export default class Board extends Component {
         player:newPlayer
       })
 
-    }
-       /*  console.log(this.state.board); */
-      //  this.whoIsWinner();
+       this.whoIsWinner();
+
+    } 
+       //console.log(this.state.board);
+      
         
     }
     
