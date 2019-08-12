@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//import { log } from 'util';
 //import Square from './Square';
 
 
@@ -16,22 +17,29 @@ export default class Board extends Component {
       }
     }
 
-    whoIsWinner(){
+    whoIsWinner=()=>{
       let winner= [
-        [0,1,2]
-        [3,4,5]
-        [6,7,8]
-        [0,3,6]
-        [1,4,7]
-        [2,5,8]
-        [0,4,8]
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
         [2,4,6]
-
-
       ]
 
       for (let i = 0; i < winner.length; i++) {
-        const element = winner[i];
+        const [a,b,c] = winner[i];
+        console.log(this.state.board);
+        
+        if(this.state.board[a] && this.state.board[a] === this.state.board[b] && this.state.board[a] === this.state.board[c]){
+          prompt('you won');
+      
+        }
+
+        
+    
         
       }
     }
@@ -42,7 +50,7 @@ export default class Board extends Component {
     handleClick= (index)=>{
 
       let board2 = this.state.board
-      if(this.state.board[index] === null){
+      if(this.state.board[index] === null ){
       board2[index]= this.state.player
 
       // switch players
@@ -55,6 +63,7 @@ export default class Board extends Component {
 
     }
        /*  console.log(this.state.board); */
+      //  this.whoIsWinner();
         
     }
     
