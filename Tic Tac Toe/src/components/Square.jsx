@@ -4,11 +4,16 @@ export default class Square extends Component {
     render() {
         return (
             <div>
-                
-     <button className="square">
-            </button>
+                <h2>check player</h2>
+                <form>
+                   <label>PLayer X</label>
+                   <input type="radio" />
+                   {/* player O */}
+                   <label>PLayer O</label>
+                   <input type="radio" />
+                    </form>
 
-            </div>
+                    </div>
         )
     }
 }
