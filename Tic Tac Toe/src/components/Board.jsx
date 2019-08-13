@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-//import { log } from 'util';
-//import Square from './Square';
+import Square from './Square';
+
+
 
 
 export default class Board extends Component {
@@ -13,7 +14,7 @@ export default class Board extends Component {
         board: Array(9).fill(null),
 
         // player
-        player: 'X'
+        player: 'X',
       }
     }
 
@@ -31,22 +32,17 @@ export default class Board extends Component {
 
       for (let i = 0; i < winner.length; i++) {
         const [a,b,c] = winner[i];
-        console.log(this.state.board);
+
+
+        //console.log(this.state.board);
         
         if(this.state.board[a] && this.state.board[a] === this.state.board[b] && this.state.board[a] === this.state.board[c]){
           alert('you won');
       
         }
-
-        
-    
-        
       }
     }
 
-
-
-   
     handleClick= (index)=>{
 
       let board2 = this.state.board
@@ -65,21 +61,35 @@ export default class Board extends Component {
 
     } 
        //console.log(this.state.board);
-      
         
     }
-    
 
-  
+    restart=()=>{
+      //console.log('reset');
+      
+       let newArray= this.state.board;
+      newArray=Array(9).fill(null)
+      this.setState({
+        board: newArray,
+
+        // player
+        player: 'X',
+      })
+
+
+    }
+    
     render() {
      const insideBox= this.state.board.map((box,index)=><div key={index} onClick={()=>
         this.handleClick(index)}>{box}</div>)
-    const status = 'Next player: X';
+        const status = 'Next player: X';
   
       return (
           <div>
+       
               <div className="status h2 text-center">{status}</div>
         <div className="board">{insideBox}</div>
+        <Square reset={this.restart} />
       
         </div>
       )
