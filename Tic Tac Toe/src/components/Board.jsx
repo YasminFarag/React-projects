@@ -60,10 +60,10 @@ export default class Board extends Component {
       })
 
       if(this.state.player === 'X'){
-        console.log(('X'));
+        //console.log(('X'));
         
       }else if (this.state.player === 'O') {
-        console.log('O');
+       // console.log('O');
         
         
       }
