@@ -15,6 +15,7 @@ export default class Board extends Component {
 
         // player
         player: 'X',
+      
       }
     }
 
@@ -54,8 +55,18 @@ export default class Board extends Component {
 
       this.setState({
         board:board2,
-        player:newPlayer
+        player:newPlayer,
+       
       })
+
+      if(this.state.player === 'X'){
+        console.log(('X'));
+        
+      }else if (this.state.player === 'O') {
+        console.log('O');
+        
+        
+      }
 
        this.whoIsWinner();
 
@@ -82,12 +93,12 @@ export default class Board extends Component {
     render() {
      const insideBox= this.state.board.map((box,index)=><div key={index} onClick={()=>
         this.handleClick(index)}>{box}</div>)
-        const status = 'Next player: X';
+        const status = `Next PLayer ${this.state.player}`;
   
       return (
           <div>
        
-              <div className="status h2 text-center">{status}</div>
+              <div className="status h2 text-center" onClick={this.handleClick}>{status}</div>
         <div className="board">{insideBox}</div>
         <Square reset={this.restart} />
       
