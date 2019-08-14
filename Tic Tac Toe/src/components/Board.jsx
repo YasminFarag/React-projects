@@ -15,6 +15,7 @@ export default class Board extends Component {
 
         // player
         player: 'X',
+        theWinner: 'X'
       
       }
     }
@@ -34,7 +35,8 @@ export default class Board extends Component {
       for (let i = 0; i < winner.length; i++) {
         const [a,b,c] = winner[i];
 
-
+        
+        
         //console.log(this.state.board);
         
         if(this.state.board[a] && this.state.board[a] === this.state.board[b] && this.state.board[a] === this.state.board[c]){
@@ -49,6 +51,8 @@ export default class Board extends Component {
       let board2 = this.state.board
       if(this.state.board[index] === null ){
       board2[index]= this.state.player
+      let newWinner= this.state.theWinner
+        console.log('winner is ',newWinner);
 
       // switch players
       let newPlayer = this.state.player === 'X' ? 'O' :'X';
@@ -56,8 +60,17 @@ export default class Board extends Component {
       this.setState({
         board:board2,
         player:newPlayer,
+        theWinner:newWinner
        
       })
+
+      if(this.state.theWinner === 'X'){
+        console.log('x');
+        
+      }else{
+        this.state.theWinner === 'O' 
+      }
+
 
       if(this.state.player === 'X'){
         //console.log(('X'));
@@ -75,7 +88,7 @@ export default class Board extends Component {
         
     }
 
-    restart=()=>{
+     restart=()=>{
       //console.log('reset');
       
        let newArray= this.state.board;
@@ -86,24 +99,25 @@ export default class Board extends Component {
         // player
         player: 'X',
       })
-
-
+ 
     }
     
-    render() {
+    
+    render(){
      const insideBox= this.state.board.map((box,index)=><div key={index} onClick={()=>
         this.handleClick(index)}>{box}</div>)
-        const status = `Next PLayer ${this.state.player}`;
+        const status =`Next PLayer ${this.state.player}`
+        const result = `Winner is ${this.state.theWinner}`
   
       return (
           <div>
        
-              <div className="status h2 text-center" onClick={this.handleClick}>{status}</div>
-        <div className="board">{insideBox}</div>
-        <Square reset={this.restart} />
-      
+              <div className="status h2 text-center " onClick={this.handleClick}>{status}</div>
+              <div>{result}</div>
+        <div className="board ">{insideBox}</div>
+         <Square reset={this.restart}  />
         </div>
       )
       }
-    }
-  
+    
+}
