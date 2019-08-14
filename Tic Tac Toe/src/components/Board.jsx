@@ -15,7 +15,7 @@ export default class Board extends Component {
 
         // player
         player: 'X',
-        theWinner: 'O'
+        theWinner: ''
       
       }
     }
@@ -51,7 +51,7 @@ export default class Board extends Component {
       let board2 = this.state.board
       if(this.state.board[index] === null ){
       board2[index]= this.state.player
-      let newWinner= this.state.theWinner === 'O' ? 'O' : 'X';
+      let newWinner= this.state.theWinner
         console.log('winner is ',newWinner);
 
       // switch players
@@ -66,14 +66,14 @@ export default class Board extends Component {
       // print who is the winner
 
       
-      if(this.state.theWinner === 'X'){
+     /*  if(this.state.theWinner === 'X'){
         
         
       }else if(this.state.theWinner === 'O'){
         
         
          
-      }
+      } */
 
       // switch between players
 

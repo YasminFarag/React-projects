@@ -16,21 +16,10 @@ export default class Square extends Component {
    
     render() {
         return (
-            
-            <div>
-                 {/* <h2>Choose player</h2>
+              
+                    <button className='resetbtn' onClick={this.props.reset}>Reset</button> 
 
-                <form onSubmit={this.handleSubmit}>
-                   <label>PLayer X</label>
-                   <input type="radio" />
-                  
-                    <label>PLayer O</label>
-                   <input type="radio" />
-                    </form>   */}
-
-                    <button className='resetbtn' onClick={this.props.reset}>Reset </button>
-
-                    </div>
+                   
         )
     }
 }
