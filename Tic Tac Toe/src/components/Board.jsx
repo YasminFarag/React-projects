@@ -11,16 +11,22 @@ export default class Board extends Component {
       this.state={
 
         // create an Array with 9 boxes
-        board: Array(9).fill(null),
-
+        board: Array(9).fill(null)
+,
         // player
         player: 'X',
-        theWinner: ''
+        theWinner: '',
+       
       
       }
+
     }
 
+   
+
+
     whoIsWinner=()=>{
+      this.draw()
       let winner= [
         [0,1,2],
         [3,4,5],
@@ -40,29 +46,34 @@ export default class Board extends Component {
         //console.log(this.state.board);
         
         if(this.state.board[a] && this.state.board[a] === this.state.board[b] && this.state.board[a] === this.state.board[c]){
-          alert('you won');
+          this.setState({
+            theWinner:this.state.player
+          })
       
         }
       }
+      
     }
-
+  
     handleClick= (index)=>{
-
+      if(this.state.theWinner === ''){
       let board2 = this.state.board
       if(this.state.board[index] === null ){
       board2[index]= this.state.player
-      let newWinner= this.state.theWinner
-        console.log('winner is ',newWinner);
-
+      //let newWinner= this.state.theWinner
+       // console.log('winner is ',newWinner);
+       
       // switch players
       let newPlayer = this.state.player === 'X' ? 'O' :'X';
-
+          
       this.setState({
         board:board2,
         player:newPlayer,
-        theWinner:newWinner
-       
       })
+    }
+      
+       
+     
       // print who is the winner
 
       
@@ -73,8 +84,8 @@ export default class Board extends Component {
         
         
          
-      } */
-
+      }
+ */
       // switch between players
 
       if(this.state.player === 'X'){
@@ -103,8 +114,17 @@ export default class Board extends Component {
 
         // player
         player: 'X',
+        theWinner:''
       })
  
+    }
+
+    draw(){
+      if(!this.state.board .includes(null)){
+        this.setState({
+          theWinner: 'draw'
+        })
+      }
     }
     
     
@@ -114,7 +134,7 @@ export default class Board extends Component {
         const status =`Next PLayer ${this.state.player}`
         const result = `Winner is ${this.state.theWinner}`
   
-      return (
+      return (  
           <div>
        
               <div className="status h2 text-center " onClick={this.handleClick}>{status}</div>
