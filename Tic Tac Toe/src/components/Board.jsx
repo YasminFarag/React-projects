@@ -26,7 +26,7 @@ export default class Board extends Component {
 
 
     whoIsWinner=()=>{
-      this.draw()
+      this.draw() 
       let winner= [
         [0,1,2],
         [3,4,5],
@@ -139,6 +139,7 @@ export default class Board extends Component {
        
               <div className="status h2 text-center " onClick={this.handleClick}>{status}</div>
               <div>{result}</div>
+              <div></div>
         <div className="board ">{insideBox}</div>
          <Square reset={this.restart}  />
         </div>
