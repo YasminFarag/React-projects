@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-nav li{
+li{
   display:inline;
   text-decoration: none;
   padding:50px;
@@ -13,6 +13,50 @@ p{
   width: 80%;
   font-size: 30px;
   padding: 20px;
-  height:100px;
+  height:120px;
   margin:50px 0 0 50px;
+}
+
+form{
+  background-color: 	#F0F8FF;
+  width:70%;
+  height: 200px;
+  margin:50px 0 0 50px;
+  padding: 20px 0 0 20px
+
+}
+
+input{
+  width: 70%;
+  height:20px;
+  
+}
+
+label{
+  background-color:aliceblue;
+  border:1px solid lightgray;
+  height: 20px;
+  padding:3px;
+  font-weight: lighter
+  
+  
+  
+}
+.box{
+  margin-top:30px;
+
+  
+}
+
+button{
+  background-color: green;
+  margin-top:30px;
+  height:30px;
+  border-radius: 8px;
+  color:white;
+  width:12%;
+}
+
+textarea{
+  width: 70%;
 }

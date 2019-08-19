@@ -5,22 +5,30 @@ export class CreateAPost extends Component {
         return (
             <section>
                 <form>
-                    <label>
+                    <label >
                         UserName:
+                        </label>
                         <input type="text" />
-                    </label>
+                        <br />
+                    
                     <br />
                     <label>
                         Title:
+                        </label>
                         <input type="text" />
-                    </label>
-                    <br />
+                        <br></br>
 
-                    <label>
+                        <br></br>
+                        
+
+                    <label className="box" >
                         Content:
-                        <input type="text" />
-                    </label>
-                    <br />
+                        </label>
+                        <textarea type="text" />
+                        <br />
+                    
+
+                    <button type='submit'> Creat Post</button>
                 </form>
                 
             </section>
