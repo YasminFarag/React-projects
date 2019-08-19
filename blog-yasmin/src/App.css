@@ -5,7 +5,7 @@
 li{
   display:inline;
   
-  padding:50px;
+  padding:30px;
 }
 
 .link{
@@ -38,7 +38,7 @@ input{
 
 label{
   background-color:aliceblue;
-  border:1px solid lightgray;
+  /* border:1px solid lightgray; */
   height: 20px;
   padding:3px;
   font-weight: lighter

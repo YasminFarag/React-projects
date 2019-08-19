@@ -13,9 +13,9 @@ export default class App extends React.Component {
     <Router>
     <section>
       <nav className="navigation">
-        <li className="link"><Link to="/">Home</Link></li>
-        <li className="link"><Link to ="CreateAPost">Create A Post</Link></li>
-        <li className="link"><Link to="ShowCurrentPosts">Show Current Posts</Link></li>
+        <li><Link to="/" className="link">Home</Link></li>
+        <li><Link to ="CreateAPost" className="link">Create A Post</Link></li>
+        <li><Link to="ShowCurrentPosts" className="link">Show Current Posts</Link></li>
       </nav>
       <Switch>
         <Route exact path="/" component={Home} /* text={this.state.text} */ />
