@@ -6,7 +6,15 @@ import CreateAPost from './components/CreateAPost';
 import ShowCurrentPosts from './components/ShowCurrentPosts';
 
 
-export default function App() {
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      text: ""
+    };
+  }
+  render(){
   return (
     <Router>
     <section>
@@ -15,14 +23,16 @@ export default function App() {
         <li><Link to ="CreateAPost">Create A Post</Link></li>
         <li><Link to="ShowCurrentPosts">Show Current Posts</Link></li>
       </nav>
-      
+      <Switch>
+        <Route exact path="/" component={Home} text={this.state.text} />
+        <Route path="/CreateAPost" component={CreateAPost} />
+        <Route path="/ShowCurrentPosts" component= {ShowCurrentPosts} />
+
+        </Switch>
       
     </section>
-    <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="./CreateAPost" component={CreateAPost} />
-        <Route path="./ShowCurrentPosts" component= {ShowCurrentPosts} />
-        </Switch>
+   
     </Router>
   )
+}
 }
