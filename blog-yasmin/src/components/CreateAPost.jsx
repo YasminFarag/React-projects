@@ -2,6 +2,14 @@ import React, { Component } from "react";
 
 
 class CreateAPost extends Component {
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+          text: "",
+          showResult: []
+        };
+      }
   
 
   /* handleClick = event => {

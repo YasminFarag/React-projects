@@ -7,24 +7,18 @@ import ShowCurrentPosts from './components/ShowCurrentPosts';
 
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      text: ""
-    };
-  }
+  
   render(){
   return (
     <Router>
     <section>
       <nav className="navigation">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to ="CreateAPost">Create A Post</Link></li>
-        <li><Link to="ShowCurrentPosts">Show Current Posts</Link></li>
+        <li className="link"><Link to="/">Home</Link></li>
+        <li className="link"><Link to ="CreateAPost">Create A Post</Link></li>
+        <li className="link"><Link to="ShowCurrentPosts">Show Current Posts</Link></li>
       </nav>
       <Switch>
-        <Route exact path="/" component={Home} text={this.state.text} />
+        <Route exact path="/" component={Home} /* text={this.state.text} */ />
         <Route path="/CreateAPost" component={CreateAPost} />
         <Route path="/ShowCurrentPosts" component= {ShowCurrentPosts} />
 
