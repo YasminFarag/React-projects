@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+//import ShowCurrentPosts from './ShowCurrentPosts'
 
 
 class CreateAPost extends Component {
@@ -6,44 +7,50 @@ class CreateAPost extends Component {
         super(props);
     
         this.state = {
-          text: "",
+          text:null,
           showResult: []
+         
         };
       }
   
+    
+     
 
-  /* handleClick = event => {
+   handleClick = event => {
+       const inputTxt = event.target.value
     this.setState({
-      text: event.target.value
+      text: inputTxt
+      
+      
     });
-  } */
+    //console.log(inputTxt, 'input');
+  } 
 
   handleSubmit = event => {
     event.preventDefault();
     let formValue= document.getElementsByTagName('input')
-    console.log(formValue[0].value);
+    console.log(formValue[0].value); 
+    console.log(this.state); 
+     
+    this.setState(newState =>({
+      showResult:[...newState.showResult, this.state.text]
+    }));
+
+        
+    }
     
-  };
   render() {
     return (
       <section>
         <form onSubmit={this.handleSubmit}>
           <label>UserName:
-          <input
-            type="text"
-            /* text={this.state.text}
-            onChange={this.handleClick}*/
-          />
+          <input type="text" text={this.state.text} onChange={this.handleClick}/>
           </label>
           <br />
 
           <br />
           <label>Title:
-          <input
-            type="text"
-            /* text={this.state.text}
-            onChange={this.handleClick} */
-          />
+          <input type="text" /* text={this.state.text}*/ onChange={this.handleClick} />
           </label>
           <br />
 
@@ -52,17 +59,13 @@ class CreateAPost extends Component {
 
           <label className="box">Content:
           <textarea
-            type="text"
-            /* text={this.state.text}
-            onChange={this.handleClick} */
-          />
+            type="text" text={this.state.value} /* text={this.state.text}*/ onChange={this.handleClick} />
           </label>
           <br />
 
-          <button type="submit">
-            Creat Post
-          </button>
+          <button type="submit">Creat Post</button>
         </form>
+        {/* <ShowCurrentPosts showPost={this.showPost} /> */}
       </section>
     );
   }

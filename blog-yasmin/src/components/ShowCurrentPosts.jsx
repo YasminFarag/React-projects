@@ -1,23 +1,32 @@
 import React, { Component } from "react";
-//import CreateAPost from "./CreateAPost";
+import CreateAPost from "./CreateAPost";
 
 class ShowCurrentPosts extends Component {
 
-    
+   
     
   render() {
 
-    console.log(this.props.showResult);
-      const result = this.props.showResult.map((item,index)=>(
-          <li key={index}>{item}</li>
+    //console.log(this.props.showResult);
+    
+    
+       let result = this.props.showResult.map((item,index)=>(
+          <li key={index}>{item}</li> 
+          
+          
 
-         
-      ))
+       )) ; 
+      
     return (
-      <div>
-        <span >hello to show posts</span>
+      
+        <div>
+        <h2>hello to show posts</h2>
+
         <ul>{result}</ul>
-      </div>
+        {this.props.text}
+        <CreateAPost showPost={this.showPost} />
+        </div>
+    
     );
   }
 }
