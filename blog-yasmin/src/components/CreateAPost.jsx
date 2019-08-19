@@ -1,39 +1,63 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-export class CreateAPost extends Component {
-    render() {
-        return (
-            <section>
-                <form>
-                    <label >
-                        UserName:
-                        </label>
-                        <input type="text" />
-                        <br />
-                    
-                    <br />
-                    <label>
-                        Title:
-                        </label>
-                        <input type="text" />
-                        <br></br>
 
-                        <br></br>
-                        
+class CreateAPost extends Component {
+  
 
-                    <label className="box" >
-                        Content:
-                        </label>
-                        <textarea type="text" />
-                        <br />
-                    
+  /* handleClick = event => {
+    this.setState({
+      text: event.target.value
+    });
+  } */
 
-                    <button type='submit'> Creat Post</button>
-                </form>
-                
-            </section>
-        )
-    }
+  handleSubmit = event => {
+    event.preventDefault();
+    let formValue= document.getElementsByTagName('input')
+    console.log(formValue[0].value);
+    
+  };
+  render() {
+    return (
+      <section>
+        <form onSubmit={this.handleSubmit}>
+          <label>UserName:
+          <input
+            type="text"
+            /* text={this.state.text}
+            onChange={this.handleClick}*/
+          />
+          </label>
+          <br />
+
+          <br />
+          <label>Title:
+          <input
+            type="text"
+            /* text={this.state.text}
+            onChange={this.handleClick} */
+          />
+          </label>
+          <br />
+
+          <br />
+
+
+          <label className="box">Content:
+          <textarea
+            type="text"
+            /* text={this.state.text}
+            onChange={this.handleClick} */
+          />
+          </label>
+          <br />
+
+          <button type="submit">
+            Creat Post
+          </button>
+        </form>
+      </section>
+    );
+  }
 }
 
-export default CreateAPost
+export default CreateAPost;
