@@ -10,19 +10,19 @@ export default function App() {
   return (
     <Router>
     <section>
-      <p>hello</p>
-      <nav>
+      <nav className="navigation">
         <li><Link to="/">Home</Link></li>
         <li><Link to ="CreateAPost">Create A Post</Link></li>
         <li><Link to="ShowCurrentPosts">Show Current Posts</Link></li>
       </nav>
-      <Switch>
-        <Route exact path="/" components={Home} />
-        <Route path="CreateAPost" components={CreateAPost} />
-        <ShowCurrentPosts path="ShowCurrentPosts" components= {ShowCurrentPosts} />
-        </Switch>
+      
       
     </section>
+    <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="./CreateAPost" component={CreateAPost} />
+        <Route path="./ShowCurrentPosts" component= {ShowCurrentPosts} />
+        </Switch>
     </Router>
   )
 }

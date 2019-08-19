@@ -3,9 +3,9 @@ import React, { Component } from 'react'
 export class Home extends Component {
     render() {
         return (
-            <div>
-                
-            </div>
+            <main>
+                <p className='paragraph'>Welcome to our blog site</p>
+            </main>
         )
     }
 }
