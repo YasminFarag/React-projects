@@ -2,30 +2,28 @@ import React, { Component } from "react";
 //import CreateAPost from "./CreateAPost";
 
 class ShowCurrentPosts extends Component {
-
-   
-    
+  data = e => {
+    this.setState({
+      text: e
+    });
+  };
   render() {
+    //console.log(this.props.showResult);
 
-    console.log(this.props.showResult);
-    
-    
-      /*  let result = this.props.showResult.map((item,index)=>(
-          <li key={index}>{item}</li> 
+    /*   const result = this.props.showResult.map((list,index)=>(
+          <li key={index}>{list}</li> 
          
        )) ;  */
 
     return (
-      
-        <div>
-        <h2 tet={this.props.text}>hello to show posts </h2>
-        {this.props.showResult && <p>{this.props.showResult}</p>} 
+      <div>
+        <h2>hello to show posts </h2>
 
         <ul>{}</ul>
-      
-        {/* <CreateAPost showPost={this.showPost} /> */}
-        </div>
-    
+
+        <CreateAPost result={this.data} />
+        <p>{this.props.text}</p>
+      </div>
     );
   }
 }
