@@ -7,7 +7,7 @@ class CreateAPost extends Component {
         super(props);
     
         this.state = {
-          text:null,
+          text:'',
           showResult: []
          
         };
@@ -16,7 +16,7 @@ class CreateAPost extends Component {
     
      
 
-   handleClick = event => {
+   handleChange = event => {
        const inputTxt = event.target.value
     this.setState({
       text: inputTxt
@@ -38,19 +38,24 @@ class CreateAPost extends Component {
 
         
     }
+
+    handleClick =(e)=>{
+      console.log(e.target);
+      
+    }
     
   render() {
     return (
       <section>
         <form onSubmit={this.handleSubmit}>
           <label>UserName:
-          <input type="text" text={this.state.text} onChange={this.handleClick}/>
+          <input type="text" /* text={this.state.text} */ onChange={this.handleChange}/>
           </label>
           <br />
 
           <br />
           <label>Title:
-          <input type="text" /* text={this.state.text}*/ onChange={this.handleClick} />
+          <input type="text" /* text={this.state.text}*/ onChange={this.handleChange} />
           </label>
           <br />
 
@@ -58,12 +63,11 @@ class CreateAPost extends Component {
 
 
           <label className="box">Content:
-          <textarea
-            type="text" text={this.state.value} /* text={this.state.text}*/ onChange={this.handleClick} />
+          <textarea  type="text" /* text={this.state.text}*/ onChange={this.handleClick} /> 
           </label>
           <br />
 
-          <button type="submit">Creat Post</button>
+          <button type="submit" onClick={this.handleClick}>Creat Post</button>
         </form>
         {/* <ShowCurrentPosts showPost={this.showPost} /> */}
       </section>
