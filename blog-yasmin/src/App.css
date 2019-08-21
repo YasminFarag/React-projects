@@ -4,15 +4,16 @@
 
 li{
   display:inline;
-  
   padding:30px;
 }
 
 .link{
   text-decoration: none;
+  
+
 }
 
-p{
+.paragraph{
   background-color:aliceblue;
   width: 80%;
   font-size: 30px;
@@ -68,10 +69,16 @@ textarea{
 
  /*  show current posts component */
 
-
- span{
-   height:300px;
-   width: 60%;
-   background-color: aliceblue;
-   margin-bottom: 50px;
- }
+.result{
+  background-color:lightblue;
+  border: 2px solid ;
+  width: 300px;
+  height:100px;
+  padding:50px;
+  margin: 50px 0 0 200px
+  /* padding:50px;
+  width:70%;
+  height:100px;
+   */
+}
+ 

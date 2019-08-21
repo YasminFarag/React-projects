@@ -13,18 +13,18 @@ class ShowCurrentPosts extends Component {
         console.log(this.props.arr);
         
     return (
-      <div>
+      <div className="result">
         
         {this.props.arr.map ((item,index)=>{
           return (
-            <>
-            <h2 key={index}> {item.text}</h2>
+            <span >
+            <p key={index}> {item.text}</p>
             <p >{item.title}</p>
             <p key={index}>{item.content}</p>
-</>          
+</span>          
           )
         })}
-        <p>{this.props.calender}</p>
+        {/* <p>{this.props.calender}</p> */}
       </div>
     );
   }
