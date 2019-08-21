@@ -7,7 +7,35 @@ import ShowCurrentPosts from './components/ShowCurrentPosts';
 
 
 export default class App extends React.Component {
-  
+  state={
+    text: "",
+    title: "",
+    content: "",
+    showResult: []
+  }
+
+ /*  handleChange =(a,b,c) => {
+    this.setState({
+      text: a,
+      title: b, 
+      content: c
+    });
+  } */
+
+  handleSubmit =(a,b,c) => {
+    
+    
+    //event.preventDefault();
+    let post = {
+      title: a,
+      text: b,
+      content: c
+    };
+    console.log(post);
+    this.setState({
+      showResult: [...this.state.showResult, post]
+    });
+  };
   render(){
   return (
     <Router>
@@ -19,8 +47,8 @@ export default class App extends React.Component {
       </nav>
       <Switch>
         <Route exact path="/" component={Home} /* text={this.state.text} */ />
-        <Route path="/CreateAPost" component={CreateAPost} />
-        <Route path="/ShowCurrentPosts" component= {ShowCurrentPosts} />
+        <Route path="/CreateAPost" render={()=> <CreateAPost handleSubmit={this.handleSubmit} />} />
+        <Route path="/ShowCurrentPosts" render= {()=> <ShowCurrentPosts arr={this.state.showResult} />} />
 
         </Switch>
       
