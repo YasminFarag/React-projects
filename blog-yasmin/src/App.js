@@ -11,7 +11,8 @@ export default class App extends React.Component {
     text: "",
     title: "",
     content: "",
-    showResult: []
+    showResult: [],
+    time: new Date()
   }
 
  /*  handleChange =(a,b,c) => {
@@ -24,7 +25,7 @@ export default class App extends React.Component {
 
   handleSubmit =(a,b,c) => {
     
-    
+    let time = new Date()
     //event.preventDefault();
     let post = {
       title: a,
@@ -32,6 +33,8 @@ export default class App extends React.Component {
       content: c
     };
     console.log(post);
+    console.log(time);
+    
     this.setState({
       showResult: [...this.state.showResult, post]
     });
@@ -48,7 +51,7 @@ export default class App extends React.Component {
       <Switch>
         <Route exact path="/" component={Home} /* text={this.state.text} */ />
         <Route path="/CreateAPost" render={()=> <CreateAPost handleSubmit={this.handleSubmit} />} />
-        <Route path="/ShowCurrentPosts" render= {()=> <ShowCurrentPosts arr={this.state.showResult} />} />
+        <Route path="/ShowCurrentPosts" render= {()=> <ShowCurrentPosts arr={this.state.showResult} date={this.state.time}/>} />
 
         </Switch>
       
