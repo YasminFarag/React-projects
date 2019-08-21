@@ -21,7 +21,7 @@ export default class App extends React.Component {
   }
 
   getDate =()=>{
-    let date = new Date()
+    let date = new Date().toLocaleString()
     this.setState({
       time:date
     })
