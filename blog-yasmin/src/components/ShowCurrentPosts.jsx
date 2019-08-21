@@ -18,9 +18,9 @@ class ShowCurrentPosts extends Component {
         {this.props.arr.map ((item,index)=>{
           return (
             <span >
-            <p key={index}> {item.text}</p>
-            <p >{item.title}</p>
-            <p key={index}>{item.content}</p>
+            <p  key={index}> {item.text}</p><hr />
+            <p >{item.title}</p><hr />
+            <p key={index}>{item.content}</p><hr />
 </span>          
           )
         })}

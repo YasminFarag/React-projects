@@ -22,7 +22,7 @@ li{
   margin:50px 0 0 50px;
 }
 
-form{
+.form{
   background-color: 	#F0F8FF;
   width:70%;
   height: 200px;
@@ -73,12 +73,18 @@ textarea{
   background-color:lightblue;
   border: 2px solid ;
   width: 300px;
-  height:100px;
-  padding:50px;
+  height:auto;
+  /* padding:50px; */
   margin: 50px 0 0 200px
   /* padding:50px;
   width:70%;
   height:100px;
    */
+}
+
+p{
+  padding:10px;
+  text-align: center;
+
 }
  
