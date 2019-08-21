@@ -2,11 +2,6 @@ import React, { Component } from "react";
 //import CreateAPost from "./CreateAPost";
 
 class ShowCurrentPosts extends Component {
-  data = e => {
-    this.setState({
-      text: e
-    });
-  };
   render() {
     //console.log(this.props.showResult);
 
@@ -14,15 +9,20 @@ class ShowCurrentPosts extends Component {
           <li key={index}>{list}</li> 
          
        )) ;  */
-
+        console.log(this.props.arr);
+        
     return (
       <div>
-        <h2>hello to show posts </h2>
-
-        <ul>{}</ul>
-
-        <CreateAPost result={this.data} />
-        <p>{this.props.text}</p>
+        {this.props.arr.map (item=>{
+          return (
+            <>
+            <h2> {item.text}</h2>
+            <p>{item.title}</p>
+            <p>{item.content}</p>
+</>          
+          )
+        })}
+        
       </div>
     );
   }

@@ -1,48 +1,28 @@
 import React, { Component } from "react";
-import ShowCurrentPosts from "./ShowCurrentPosts";
+//import ShowCurrentPosts from "./ShowCurrentPosts";
 
 class CreateAPost extends Component {
-  constructor(props) {
-    super(props);
+  
+  
 
-    this.state = {
-      text: "",
-      showResult: []
-    };
-  }
+    // console.log(text);
 
-  handleChange = event => {
-    const inputTxt = event.target.value;
-    this.setState({
-      text: inputTxt
-    });
-    //console.log(inputTxt, 'input');
-  };
 
-  handleSubmit = event => {
-    event.preventDefault();
-    let formValue = document.getElementsByTagName("input");
-    console.log(formValue[0].value);
-    console.log(this.state);
-
-    this.setState(newState => ({
-      showResult: [...newState.showResult, this.state.text]
-    }));
-  };
-
-  submitValue = e => {
-    this.props.result(this.state.text);
-  };
+  
 
   render() {
+    console.log(this.props);
+    
     return (
       <section>
-        <form onSubmit={this.handleSubmit}>
+       
           <label>
             UserName:
             <input
               type="text"
-              /* text={this.state.text} */ onChange={this.handleChange}
+              ref="txt"
+              /*  text={this.state.text} */
+              
             />
           </label>
           <br />
@@ -52,7 +32,9 @@ class CreateAPost extends Component {
             Title:
             <input
               type="text"
-              /* text={this.state.text}*/ onChange={this.handleChange}
+              ref="tit"
+              /* title={this.state.title} */
+              
             />
           </label>
           <br />
@@ -63,15 +45,17 @@ class CreateAPost extends Component {
             Content:
             <textarea
               type="text"
-              /* text={this.state.text}*/ onChange={this.handleClick}
+              ref="con"
+              /* content={this.state.content} */
+              
             />
           </label>
           <br />
 
-          <button type="submit" onClick={this.submitValue}>
+          <button type="button" onClick={()=> this.props.handleSubmit(this.refs.txt.value,this.refs.tit.value,this.refs.con.value)}>
             Creat Post
           </button>
-        </form>
+        
       </section>
     );
   }
