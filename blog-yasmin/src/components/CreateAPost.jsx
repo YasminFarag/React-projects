@@ -15,7 +15,7 @@ class CreateAPost extends Component {
     
     return (
       <section>
-       
+        <form>
           <label>
             UserName:
             <input  type="text" ref="txt" /*  text={this.state.text} */ />  
@@ -40,7 +40,7 @@ class CreateAPost extends Component {
           <button type="button" onClick={()=> this.props.handleSubmit(this.refs.txt.value,this.refs.tit.value,this.refs.con.value)}>
             Creat Post
           </button>
-        
+          </form>
       </section>
     );
   }
