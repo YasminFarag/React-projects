@@ -12,8 +12,21 @@ export default class App extends React.Component {
     title: "",
     content: "",
     showResult: [],
-    time: new Date()
+    time: ''
   }
+
+
+  componentDidMount(){
+    this.getDate()
+  }
+
+  getDate =()=>{
+    let date = new Date()
+    this.setState({
+      time:date
+    })
+  }
+
 
  /*  handleChange =(a,b,c) => {
     this.setState({
@@ -24,16 +37,13 @@ export default class App extends React.Component {
   } */
 
   handleSubmit =(a,b,c) => {
-    
-    let time = new Date()
     //event.preventDefault();
     let post = {
       title: a,
       text: b,
-      content: c
+      content: c,
     };
     console.log(post);
-    console.log(time);
     
     this.setState({
       showResult: [...this.state.showResult, post]
@@ -51,10 +61,9 @@ export default class App extends React.Component {
       <Switch>
         <Route exact path="/" component={Home} /* text={this.state.text} */ />
         <Route path="/CreateAPost" render={()=> <CreateAPost handleSubmit={this.handleSubmit} />} />
-        <Route path="/ShowCurrentPosts" render= {()=> <ShowCurrentPosts arr={this.state.showResult} date={this.state.time}/>} />
+        <Route path="/ShowCurrentPosts" render= {()=> <ShowCurrentPosts arr={this.state.showResult} calender={this.state.time} />} />
 
         </Switch>
-      
     </section>
    
     </Router>

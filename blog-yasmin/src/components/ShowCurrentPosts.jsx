@@ -2,6 +2,7 @@ import React, { Component } from "react";
 //import CreateAPost from "./CreateAPost";
 
 class ShowCurrentPosts extends Component {
+  
   render() {
     //console.log(this.props.showResult);
 
@@ -18,13 +19,12 @@ class ShowCurrentPosts extends Component {
           return (
             <>
             <h2 key={index}> {item.text}</h2>
-            <p key={index}>{item.title}</p>
+            <p >{item.title}</p>
             <p key={index}>{item.content}</p>
 </>          
           )
         })}
-        <p>{this.props.time}</p>
-        
+        <p>{this.props.calender}</p>
       </div>
     );
   }
