@@ -21,7 +21,7 @@ class ShowCurrentPosts extends Component {
             <p  key={index}> {item.text}</p><hr />
             <p >{item.title}</p><hr />
             <p key={index}>{item.content}</p><hr />
-            <p>{this.props.calender}</p><hr />
+            <p>{this.props.calender}</p>
 </>          
           )
         })}
