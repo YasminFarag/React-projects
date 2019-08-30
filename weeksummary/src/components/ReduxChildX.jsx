@@ -13,7 +13,7 @@ class ReduxChildX extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps= state => ({
     x: state.x
 })
 
