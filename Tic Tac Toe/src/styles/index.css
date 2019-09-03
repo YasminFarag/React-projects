@@ -7024,29 +7024,29 @@ body {
   font-family: "Century Gothic", Futura, sans-serif; }
 
 .board {
-  width: 40vw;
-  height: 40vh;
+  width: 30vw;
+  height: 30vw;
   margin: 0 auto;
-  background-color: darkgrey;
-  color: black;
+  background-color: #34495e;
+  color: #fff;
   border: 6px solid #2c3e50;
   border-radius: 10px;
   display: grid;
-  grid-template: repeat(3, 1fr) /repeat(3, 1fr) ; 
+  grid-template: repeat(3, 1fr)/repeat(3, 1fr);
+font-size: 35px; }
+
+.square {
+  background: transparent;
+  color: #FFF;
+  border: 1px solid #999;
+  font-size: 5vw;
+  font-weight: bold;
   text-align: center;
-  font-size: 50px;
-
-
-
-}
-
-.resetbtn{
-  margin:50px 0 0 300px;
-  width: 10vw;
-
-}
-
-
+  border: 2px solid #2c3e50;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .square:focus {
   outline: none; }
