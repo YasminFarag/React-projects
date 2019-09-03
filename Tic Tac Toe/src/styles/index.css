@@ -7056,3 +7056,11 @@ font-size: 35px; }
 
 .square.winner {
   background-color: #DF73FF; }
+
+  .winner{
+    width:20%;
+    height: 15%;
+    margin: auto; 
+    padding:5px;   
+  
+  }

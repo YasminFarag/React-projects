@@ -16,6 +16,7 @@ export default class Square extends Component {
    
     render() {
         return (
+            
               
                     <button className='resetbtn' onClick={this.props.reset}>Reset</button> 
 

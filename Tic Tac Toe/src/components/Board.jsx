@@ -129,16 +129,20 @@ export default class Board extends Component {
     
     
     render(){
+      const styles= {color:'black'}
      const insideBox= this.state.board.map((box,index)=><div key={index} onClick={()=>
         this.handleClick(index)}>{box}</div>)
         const status =`Next PLayer ${this.state.player}`
         const result = `Winner is : ${this.state.theWinner}`
+        if(this.state.theWinner == 'X' || this.state.theWinner == 'O' ){
+          styles.background= 'green'
+        }
   
       return (  
           <div>
        
-              <div className="status h2 text-center sqaure" onClick={this.handleClick}>{status}</div>
-              <div>{result}</div>
+              <div className="status h2 text-center" onClick={this.handleClick}>{status}</div>
+              <div className="winner" style= {styles}>{result}</div>
               <div></div>
         <div className="board ">{insideBox}</div>
          <Square reset={this.restart}  />
