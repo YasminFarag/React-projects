@@ -7032,11 +7032,14 @@ body {
   border: 6px solid #2c3e50;
   border-radius: 10px;
   display: grid;
-   grid-template: repeat(3, 1fr)/repeat(3, 1fr); 
-  /* grid-template-columns: 200px 200px 200px; */
-font-size: 35px; 
+  grid-template: repeat(3, 1fr)/repeat(3, 1fr); 
+  font-size: 40px;
+  text-align: center; 
+
  
 }
+
+
 
   
 .square {
@@ -7069,8 +7072,4 @@ font-size: 35px;
   
   }
 
-  .boxx{
-    border: 1px solid black;
-  text-align: center;
-  font-size: 30px;
-  }
+  
