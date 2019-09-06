@@ -1,22 +1,18 @@
-import React from 'react'
+import React, { Component } from 'react';
 
-const Home = (props)=> {
-    
-console.log(props);
 
-setTimeout(() => {
-    props.history.push('/createAPost')
+class Home extends Component {
     
-},4000);
+
 
     
-    
+    render() {
         return (
             <main>
                 <p className='paragraph'>Welcome to our blog site</p>
             </main>
         )
     }
-
+}
 
 export default Home
