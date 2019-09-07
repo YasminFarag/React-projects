@@ -2,14 +2,7 @@ import React, { Component } from "react";
 //import ShowCurrentPosts from "./ShowCurrentPosts";
 
 class CreateAPost extends Component {
-  
-  
-
     // console.log(text);
-
-
-  
-
   render() {
     console.log(this.props);
     

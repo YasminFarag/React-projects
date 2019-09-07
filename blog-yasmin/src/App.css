@@ -23,7 +23,7 @@ li{
 }
 
 .form{
-  background-color: 	#F0F8FF;
+ 
   width:70%;
   height: 200px;
   margin:50px 0 0 50px;
@@ -38,7 +38,7 @@ input{
 }
 
 label{
-  background-color:aliceblue;
+ 
   /* border:1px solid lightgray; */
   height: 20px;
   padding:3px;
@@ -63,9 +63,7 @@ button{
   width:12%;
 }
 
-textarea{
-  width: 70%;
-}
+
 
  /*  show current posts component */
 
