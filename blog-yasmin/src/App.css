@@ -68,8 +68,8 @@ button{
  /*  show current posts component */
 
 .result{
-  background-color:lightblue;
-  border: 1px solid ;
+  background-color:aliceblue;
+  /* border: 1px solid ; */
   width: 300px;
   height:auto;
   /* padding:50px; */
