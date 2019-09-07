@@ -87,4 +87,13 @@ p{
   text-align: center;
 
 }
- 
+
+img{
+  position: absolute;
+  top: 7px;
+  width: 10%
+}
+
+.color{
+  background: blue
+}
